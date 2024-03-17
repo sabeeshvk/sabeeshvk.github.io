@@ -3,13 +3,24 @@ title: "Java Memory settings for Containarized Apps"
 layout: post
 ---
 
-# Containarized Applications
 
-Here are some java settings that can be used on containairized applications
+# Motivation 
 
+Recent years have seen tremendous growth in enterprise Java applications being modularized into  microservices. These services deployed as containarized application on Kubernetes (k8s), on premise or on K8s installations on cloud providers like EKS (AWS), AKS (Azure), GKE (Google cloud) etc.
+ 
+
+## Assumptions 
+- A container is primarily dedicated to the java application 
+- Below settings are speicified primarily specified keeping on-premise k8s installations in mind, with focus on low latency 
+- Absolute memory 
+
+## Settings 
+Here are some java settings that can be used 
 
 ```
--XX:+UseG1GC -XX:+PrintGCDetails  -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC  -verbosegc -XX:+UseStringDeduplication  -XX:InitialRAMPercentage=50.0 -XX:MaxRAMPercentage=50.0   
+-XX:+UseG1GC XX:+DisableExplicitGC 
+-XX:+PrintGCDetails  -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC  -verbosegc 
+-XX:+UseStringDeduplication -XX:InitialRAMPercentage=50.0 -XX:MaxRAMPercentage=50.0 -XX:NativeMemoryTracking=sumary 
 -XX:+PrintFlagsFinal
 ```
 
