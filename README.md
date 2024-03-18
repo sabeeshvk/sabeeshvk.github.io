@@ -4,6 +4,15 @@ permalink: "/about/"
 layout: page
 ---
 
+## Reflections
+
+This is my "GitHub Pages" blog for technical and other random content.
+
+Follow the "Installation" instruction to setup your own "Github Pages"  
+
+Add md files with date prefix to write your posts.  Thats it. 
+
+
 ## Installation
 
 Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
