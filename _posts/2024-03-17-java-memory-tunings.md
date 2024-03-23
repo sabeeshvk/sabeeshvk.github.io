@@ -1,6 +1,7 @@
 ---
 title: "Java Memory settings for Containarized Apps"
 layout: post
+comments: true
 ---
 
 
